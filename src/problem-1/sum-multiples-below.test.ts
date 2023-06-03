@@ -9,3 +9,8 @@ it('returns 0 for an input less than 3', () => {
   const result = sumMultiplesOf3And5Below(2)
   expect(result).toBe(0)
 })
+
+it('returns 3 for an input of 4', () => {
+  const result = sumMultiplesOf3And5Below(4)
+  expect(result).toBe(3)
+})

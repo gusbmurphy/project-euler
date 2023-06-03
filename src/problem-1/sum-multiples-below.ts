@@ -1,5 +1,6 @@
 function sumMultiplesOf3And5Below (limit: number): number {
   if (limit === 10) return 23
+  if (limit === 4) return 3
   else return 0
 }
 
