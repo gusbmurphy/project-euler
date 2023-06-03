@@ -1,5 +1,5 @@
-function sumMultiplesOf3And5Below(limit: number): number {
-  return 23;
+function sumMultiplesOf3And5Below (limit: number): number {
+  return 23
 }
 
-export default sumMultiplesOf3And5Below;
+export default sumMultiplesOf3And5Below
