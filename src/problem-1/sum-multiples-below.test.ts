@@ -14,3 +14,8 @@ it('returns 3 for an input of 4', () => {
   const result = sumMultiplesOf3And5Below(4)
   expect(result).toBe(3)
 })
+
+it('returns 8 for an input of 6', () => {
+  const result = sumMultiplesOf3And5Below(8)
+  expect(result).toBe(8)
+})
