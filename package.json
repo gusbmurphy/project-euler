@@ -12,6 +12,6 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.js, *.ts": "ts-standard --fix"
+    "*.{js,ts}": "ts-standard --fix"
   }
 }
