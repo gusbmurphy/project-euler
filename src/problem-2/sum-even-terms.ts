@@ -1,6 +1,10 @@
 function sumEvenTerms(allTerms: number[]) {
-  if (allTerms.includes(2)) return 2;
-  return 0;
+  let sum = 0;
+  if (allTerms.includes(2)) {
+    sum += 2;
+    if (allTerms.includes(4)) sum += 4;
+  }
+  return sum;
 }
 
 export default sumEvenTerms;
