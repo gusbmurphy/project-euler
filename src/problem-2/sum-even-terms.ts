@@ -1,9 +1,10 @@
 function sumEvenTerms(allTerms: number[]) {
   let sum = 0;
-  if (allTerms.includes(2)) {
-    sum += 2;
-  }
-  if (allTerms.includes(4)) sum += 4;
+
+  allTerms.forEach((term) => {
+    if (term % 2 === 0) sum += term;
+  });
+
   return sum;
 }
 
