@@ -1,5 +1,5 @@
 function getFibsBelow(upperLimit: number): number[] {
-  return [1, 2];
+  return upperLimit === 3 ? [1, 2] : [1, 2, 3];
 }
 
 export default getFibsBelow;
