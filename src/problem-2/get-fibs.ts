@@ -1,7 +1,21 @@
+function generateNextFibFromExistingFibs(existingFibs: number[]) {
+  const lastFib = existingFibs[existingFibs.length - 1];
+  const secondToLastFib = existingFibs[existingFibs.length - 2];
+  return lastFib + secondToLastFib;
+}
+
 function getFibsBelow(upperLimit: number): number[] {
-  if (upperLimit === 3) return [1, 2];
-  if (upperLimit === 4) return [1, 2, 3];
-  return [1, 2, 3, 5];
+  const fibs = [1, 2];
+
+  for (
+    let nextFib = 3;
+    nextFib < upperLimit;
+    nextFib = generateNextFibFromExistingFibs(fibs)
+  ) {
+    fibs.push(nextFib);
+  }
+
+  return fibs;
 }
 
 export default getFibsBelow;
