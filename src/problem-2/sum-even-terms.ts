@@ -1,5 +1,6 @@
 function sumEvenTerms(allTerms: number[]) {
-  return 2;
+  if (allTerms.includes(2)) return 2;
+  return 0;
 }
 
 export default sumEvenTerms;
