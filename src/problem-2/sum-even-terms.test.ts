@@ -11,3 +11,7 @@ it("returns 0 when given only odd terms", () => {
 it("returns 6 when the input contains 2 and 4, but also other odd numbers", () => {
   expect(sumEvenTerms([0, 3, 7, 2, 4])).toBe(6);
 });
+
+it("returns 4 when the input contains just 4, but also other odd numbers", () => {
+  expect(sumEvenTerms([0, 3, 7, 4])).toBe(4);
+});
