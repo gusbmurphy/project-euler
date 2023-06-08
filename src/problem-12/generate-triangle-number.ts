@@ -1,7 +1,11 @@
 function generateTriangleNumber(triangleNumberPosition: number): number {
-  if (triangleNumberPosition == 1) return 1;
-  if (triangleNumberPosition == 3) return 6;
-  return 3;
+  let triangleNumber = 0;
+
+  for (let addend = 1; addend <= triangleNumberPosition; addend++) {
+    triangleNumber += addend;
+  }
+
+  return triangleNumber;
 }
 
 export default generateTriangleNumber;
