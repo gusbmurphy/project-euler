@@ -1,7 +1,7 @@
 import * as readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
-import generateTriangleNumber from "./generate-triangle-number";
 import getFactorsOfNumber from "./get-factors-of-number";
+import findFirstTriangleNumberWithDivisorsGreaterThan from "./find-triangle-with-divisors";
 
 const rl = readline.createInterface({ input, output });
 
@@ -11,24 +11,15 @@ async function main(): Promise<void> {
   );
   const targetNumberOfDivisors = parseInt(targetNumberOfDivisorsString);
 
-  let triangleNumberWithDivisorsOverTarget: number | undefined = undefined;
-  let numberOfDivisors = 0;
+  const triangleNumberWithDivisorsOverTarget =
+    findFirstTriangleNumberWithDivisorsGreaterThan(targetNumberOfDivisors);
 
-  for (
-    let triangleNumberPosition = 1;
-    triangleNumberWithDivisorsOverTarget == undefined;
-    triangleNumberPosition++
-  ) {
-    const triangleNumber = generateTriangleNumber(triangleNumberPosition);
-    numberOfDivisors = getFactorsOfNumber(triangleNumber).length;
-
-    if (numberOfDivisors > targetNumberOfDivisors) {
-      triangleNumberWithDivisorsOverTarget = triangleNumber;
-    }
-  }
+  const numberOfDivisors = getFactorsOfNumber(
+    triangleNumberWithDivisorsOverTarget
+  ).length;
 
   console.log(
-    `The first triangle number with over ${targetNumberOfDivisors} is ${triangleNumberWithDivisorsOverTarget}, with ${numberOfDivisors} divisors`
+    `The first triangle number with over ${targetNumberOfDivisors} factors is ${triangleNumberWithDivisorsOverTarget}, with ${numberOfDivisors} divisors`
   );
 
   rl.close();
